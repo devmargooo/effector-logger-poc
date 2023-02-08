@@ -2,11 +2,13 @@ import './App.css';
 import {createEvent, createStore} from 'effector-logger'
 import {useStore} from 'effector-react'
 import {createDomain} from 'effector';
-import {attachLogger} from 'effector-logger/attach'
+// import {attachLogger} from 'effector-logger/attach'
+import { attachLogger } from "@fnpen/effector-devtools";
 
 const plus = createEvent("plus");
 
-export const root = createDomain('app')
+export const root = createDomain('app');
+attachLogger(root);
 const $counter = createStore({
     value: 1,
     square: 1,
@@ -18,7 +20,7 @@ const $counter = createStore({
     }
 })
 
-attachLogger(root, { reduxDevtools: 'enabled', console: 'enabled', inspector: 'enabled' });
+// attachLogger(root, { reduxDevtools: 'enabled', console: 'enabled', inspector: 'enabled' });
 
 const App = () => {
   const counter = useStore($counter)

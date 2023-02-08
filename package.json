@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "@fnpen/effector-devtools": "^0.4.0",
     "customize-cra": "^1.0.0",
     "react-app-rewired": "^2.2.1"
   }
